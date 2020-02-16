@@ -5,6 +5,11 @@ pipeline {
        GOCACHE = "/tmp"
    }
    stages {
+       stage('env') {
+           steps {
+               sh 'env'
+           }
+       }
        stage('Build') {
            agent {
                docker {
